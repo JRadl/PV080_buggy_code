@@ -24,10 +24,10 @@ def print_nametag(format_string, person):
     print(format_string.format(person=person))
 
 
-def fetch_website(urllib_version, url):
+def fetch_website(urllib_old = False, url):
     # Import the requested version (2 or 3) of urllib
-    assert urlib_version in ("2","3")
-    exec(f"import urllib{urllib_version} as urllib", globals())
+    
+    exec(f"import urllib{2 if urllib_old else 3} as urllib", globals())
     # Fetch and print the requested URL
 
     try: 
